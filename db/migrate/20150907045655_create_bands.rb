@@ -3,7 +3,7 @@ class CreateBands < ActiveRecord::Migration
     create_table :bands do |t|
       t.string :name
       t.string :image
-      t.string :description
+      t.text   :description
       t.string :city
       t.string :contact_info
 
