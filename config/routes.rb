@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   
-  devise_for :bands
-  root "application#index"
+  root "home#index"
 
   get 'sessions/create'
 
   get 'sessions/destroy'
+
+  get '/map', to: 'map#index'
   
-  get "*path" => "application#index"
+  get "*path" => "home#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

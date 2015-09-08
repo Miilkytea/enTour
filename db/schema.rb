@@ -11,9 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150907045806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bands", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "description"
+    t.string   "city"
+    t.string   "contact_info"
+    t.integer  "city_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+  end
+
+  add_index "bands", ["city_id"], name: "index_bands_on_city_id", using: :btree
+  add_index "bands", ["email"], name: "index_bands_on_email", unique: true, using: :btree
+  add_index "bands", ["reset_password_token"], name: "index_bands_on_reset_password_token", unique: true, using: :btree
+
+  create_table "city", force: :cascade do |t|
+    t.string   "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "band_id"
+    t.integer  "friend_id"
+    t.boolean  "authorized", default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "spaces", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "contact"
+    t.integer  "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
