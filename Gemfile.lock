@@ -58,13 +58,22 @@ GEM
     childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
+    coffee-rails (4.1.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.9.1.1)
     database_cleaner (1.5.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
+    geocoder (1.2.10)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.3.1)
@@ -186,7 +195,10 @@ DEPENDENCIES
   bootstrap-sass
   bower-rails
   capybara
+  coffee-rails
   database_cleaner
+  geocoder
+  gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
   pg

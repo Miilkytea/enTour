@@ -8,6 +8,8 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+gem 'coffee-rails'
+
 gem 'bootstrap-sass' 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -22,6 +24,9 @@ gem "angular-rails-templates"
 
 gem "jquery-rails"
 
+# google maps gem
+gem 'gmaps4rails'
+gem 'geocoder'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

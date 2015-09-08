@@ -3,10 +3,9 @@ class CreateBands < ActiveRecord::Migration
     create_table :bands do |t|
       t.string :name
       t.string :image
-      t.text   :description
-      t.string :city
-      t.string :contact_info
-
+      t.string :description
+      t.string :email
+      t.string :website
       t.references :city, index: true, foreign_key: true
 
       t.timestamps null: false
