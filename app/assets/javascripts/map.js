@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
         borderWidth: 1,
         color: '#E8D5C9',
         enableZoom: true,
-        hoverColor: '#FA89FF',
+        hoverColor: '#FFBB0D',
         hoverOpacity: null,
         normalizeFunction: 'linear',
         scaleColors: ['#b6d6ff', '#005ace'],
