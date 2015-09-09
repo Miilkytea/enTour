@@ -19,6 +19,18 @@
  @import "bootstrap-sprockets";
  @import "map";
  @import "jqvmap";
+ @import "home";
+
+
+ 
+
+#triangle-topleft {
+  width: 0;
+  height: 0;
+  border-top: 200px solid pink;
+  border-right: 1400px solid transparent;
+  overflow: hidden;
+}
 
 
 

@@ -20,9 +20,12 @@
 //= require bootstrap-sprockets
 //= require jquery.vmap.min.js
 //= require jquery.vmap.usa.js
+//= require jquery.color.js
 //= require underscore
 //= require gmaps/google
 //= require app.js
 //= require_tree .
 //= require_tree ../templates
+
+
 

@@ -8,7 +8,13 @@
 
  
 </head>
-<body>
+
+<% if body_class == 'map' %>
+  <body class="map">
+<% elsif body_class == 'home' %>
+  <body class="home">
+<% end %>
+
   <div id="triangle-topleft"></div>
 
   <%= yield %>
