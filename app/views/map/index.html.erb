@@ -1,7 +1,21 @@
-<body>
-  <div id="vmap" style="width: 900px; height: 600px;"></div>
+<script>
+  // <%# @spaces.each do || %>
 
+  //   // code to add markers to map
+
+  // <%# end %>
+
+
+</script>
+
+
+<div ng-controller="MapController as vm"> 
+  <p>{{vm.test}}</p>
+  <!-- svg map view -->
+  <div id="vmap" style="width: 1000px; height: 667px;"></div>
+
+  <!-- google maps view -->
   <div style='width: 800px;'>
     <div id="map" style='width: 800px; height: 400px;'></div>
   </div>
-</body>
+</div>

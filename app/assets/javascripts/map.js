@@ -1,7 +1,10 @@
+
 //svg jqvmap loaded on /map
 jQuery(document).ready(function() {
+
+
     jQuery('#vmap').vectorMap(
-      { 
+      {
         map: 'usa_en',
         backgroundColor: 'transparent',
         borderColor: '#818181',
@@ -9,7 +12,7 @@ jQuery(document).ready(function() {
         borderWidth: 1,
         color: '#E8D5C9',
         enableZoom: true,
-        hoverColor: '#EBB200',
+        hoverColor: '#FA89FF',
         hoverOpacity: null,
         normalizeFunction: 'linear',
         scaleColors: ['#b6d6ff', '#005ace'],
@@ -18,11 +21,18 @@ jQuery(document).ready(function() {
         showTooltip: true,
         onRegionClick: function(element, code, region)
         {
+            var scope = angular.element(document.body).scope().$$childTail;
             console.log(code);
             $('#vmap').append('http://google.com');
+
+            console.log(scope);
+            scope.$apply(function() {
+                scope.vm.state = code;
+            });
         }
         
       });
 });
 
-//google map loaded from a click event 
+
+

@@ -22,6 +22,7 @@
 //= require jquery.vmap.usa.js
 //= require underscore
 //= require gmaps/google
+//= require app.js
 //= require_tree .
 //= require_tree ../templates
 

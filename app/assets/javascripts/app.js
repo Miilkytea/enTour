@@ -2,6 +2,6 @@
   "use strict";
 
   angular
-    .module("newApp", []);
+    .module("app", []);
 
 })();
