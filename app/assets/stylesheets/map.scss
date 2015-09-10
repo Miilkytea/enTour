@@ -4,11 +4,15 @@ body.map {
 }
 
 #map-box {
-  margin:0 auto;
+  margin: auto;
   z-index: 2;
   position: absolute;
-  top:30%;
-  left:25%;
+  // top:30%;
+  // left:25%;
   border-radius: 15px;
+  top: 240px; 
+  left: 0; 
+  bottom: 0; 
+  right: 0
 
 }

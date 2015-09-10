@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
         borderOpacity: 0.25,
         borderWidth: 1,
         color: '#E8D5C9',
-        enableZoom: true,
+        enableZoom: false,
         hoverColor: '#FFBB0D',
         hoverOpacity: null,
         normalizeFunction: 'linear',
