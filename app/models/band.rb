@@ -1,5 +1,5 @@
 class Band < ActiveRecord::Base
-  has_secure_password :true
+  # has_secure_password :true
 
   #Checks if email exists and if email format is correct
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}

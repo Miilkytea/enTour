@@ -9,31 +9,39 @@
 
 Space.destroy_all
 City.destroy_all
+Band.destroy_all
 
 City.create(
-   name: "Los Angeles",
-  state: "CA"
+     name: "Los Angeles",
+    state: "CA"
 
 )
 
 Space.create(
-  name: "The Smell",
+     name: "The Smell",
   address: "247 S Main St, Los Angeles, CA 90013",
-  email: "",
+    email: "",
   website: "",
   city_id: 1,
-  lat: 34.050160, 
-  lng: -118.245335
+      lat: 34.050160, 
+      lng: -118.245335
 )
 
-
 Space.create(
-  name: "Pehrspace",
+     name: "Pehrspace",
   address: "325 Glendale Blvd, Los Angeles, CA 90026",
-  email: "",
+    email: "",
   website: "",
   city_id: 1,
-  lat: 34.066450, 
-  lng: -118.260472
+      lat: 34.066450, 
+      lng: -118.260472
+)
+
+Band.create(
+     name: "Lala Lala",
+    email: "user@user.com", 
+ password: "test", 
+ password_confirmation: "test"
+
 )
 

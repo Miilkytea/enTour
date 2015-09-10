@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   get 'login' => 'login#index'
 
-  
+  namespace :api do
+    resources :spaces
+  end
 
   resources :bands
   

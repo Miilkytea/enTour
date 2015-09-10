@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
         onRegionClick: function(element, code, region)
         {
 
-            $("#map-box").show();
+            $("#map-box").toggle();
             var scope = angular.element(document.body).scope().$$childTail;
             console.log(code);
             $('#vmap').append('http://google.com');
