@@ -1,3 +1,14 @@
 body.map {
   background-image: url('http://i.imgur.com/E33WXU3.png');
+  position: relative;
+}
+
+#map-box {
+  margin:0 auto;
+  z-index: 2;
+  position: absolute;
+  top:30%;
+  left:25%;
+  border-radius: 15px;
+
 }

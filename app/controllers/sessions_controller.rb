@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     band = Band.find_by(email: params[:email])
     if band && band.authenticate(params[:password])
       session[:band_id] = band.id
-      redirect_to user_lists_path(user.id), notice: "Logged in!"
+      redirect_to user_lists_path(band.id), notice: "Logged in!"
     else
       flash.now.alert = 'Invalid login credentials'
       render 'new'

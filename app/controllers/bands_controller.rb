@@ -11,7 +11,8 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(band_params)
     if @band.save(band_params)
-      redirect_to 
+      session[:band_id] = @band.id.to_s
+      redirect_to edit_band_path(current_user)
 
     else 'new'
     end

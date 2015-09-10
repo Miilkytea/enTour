@@ -1,9 +1,21 @@
 <script>
-  // <%# @spaces.each do || %>
 
-  //   // code to add markers to map
+function mark() {
+  markers = handler.addMarkers([
 
-  // <%# end %>
+
+  <% @spaces.each do |space| %>
+    {
+      "lat": <%= space.lat %>,
+      "lng": <%= space.lng %>,
+      "marker": '<span><%= space.name %></span>'
+    },
+    <% end %>
+
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+}
 
 
 </script>
@@ -15,8 +27,16 @@
   <div id="vmap" style="width: 1000px; height: 667px;"></div>
 
   <!-- google maps view -->
-  <div style='width: 800px;'>
+  <div id="map-box"style='width: 800px; display: none;'>
     <div id="map" style='width: 800px; height: 400px;'></div>
   </div>
+
+
+  <div class="input-group search-bar">
+  <input type="text" 
+         ng-model="search" 
+         ng-change="change()"
+         placeholder="Search for show spaces" </input>
+</div>
 </div>
 
