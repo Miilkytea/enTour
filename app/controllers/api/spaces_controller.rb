@@ -3,7 +3,7 @@ class Api::SpacesController < ApplicationController
   # GET /spaces
   # GET /spaces.json
   def index
-    @spaces = Space.find_by_trend_id(params[:trend_id])
+    @spaces = Space.all
     render json: @spaces , root: false
   end
 
@@ -16,8 +16,8 @@ class Api::SpacesController < ApplicationController
   # POST /spaces
   # POST /spaces.json
   def create
-    trend = Trend.find(params[:trend_id])
-    if trend.spaces.create(space_params)
+    @space = Space.find(params[:trend_id])
+    if @space.save(space_params)
       render json: @space, status: :created, location: @space
     else
       render json: @space.errors, status: :unprocessable_entity
@@ -49,7 +49,6 @@ class Api::SpacesController < ApplicationController
   end
 
   def space_params
-    params.require(:space).permit(:url)
+    params.require(:space).permit(:name, :address, :email, :website, :latitude, :longitude)
   end
-
 end

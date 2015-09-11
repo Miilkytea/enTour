@@ -6,8 +6,8 @@ function mark() {
 
   <% @spaces.each do |space| %>
     {
-      "lat": <%= space.lat %>,
-      "lng": <%= space.lng %>,
+      "latitude": <%= space.latitude %>,
+      "longitude": <%= space.longitude %>,
       "marker": '<span><%= space.name %></span>'
     },
     <% end %>
@@ -22,7 +22,7 @@ function mark() {
 
 
 <div ng-controller="MapController as vm"> 
-  <p>{{vm.test}}</p>
+  
   <!-- svg map view -->
   <div id="vmap" style="width: 1000px; height: 667px;"></div>
 
@@ -30,13 +30,43 @@ function mark() {
   <div id="map-box"style='width: 800px; height: 400px; display: none;'>
     <div id="map" style='width: 800px; height: 400px;'></div>
   </div>
+</div>  
 
-
-  <div class="input-group search-bar">
+<!-- fuzzy show spaces search -->
+<div class="container">
+  <div class="row">
+      <div class="col-xs-6">
+        <label>City</label>
+        <select class="form-control" ng-model="vm.selectedCity" ng-options="name for name in vm.name"></select>
+      </div>
+      <div class="col-xs-6">
+        <label>Search</label>
+        <input type="search" class="form-control" ng-model="vm.search" placeholder="search...">
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th ng-click="vm.sortBy = 'name'; vm.descending = !vm.descending">Name</th>
+          <th ng-click="vm.sortBy = 'address'; vm.descending = !vm.descending">Address</th>
+          <th ng-click="vm.sortBy = 'website'; vm.descending = !vm.descending">Website</th>
+          <th ng-click="vm.sortBy = 'email'; vm.descending = !vm.descending">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="name in vm.name | filter:{address: vm.address} | filter:vm.search | orderBy:vm.sortBy:vm.descending">
+          <td>{{client.name}}</td>
+          <td>{{client.address}}</td>
+          <td>{{client.website}}</td>
+          <td>{{client.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+<!--   <div class="input-group search-bar">
   <input type="text" 
          ng-model="search" 
          ng-change="change()"
-         placeholder="Search for show spaces" </input>
+         placeholder="Search for show spaces" </input> -->
 </div>
-</div>
+
 

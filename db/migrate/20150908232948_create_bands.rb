@@ -6,6 +6,7 @@ class CreateBands < ActiveRecord::Migration
       t.string   :description
       t.string   :email
       t.string   :website
+      t.string   :password_digest
       
       t.references :city, index: true, foreign_key: true
 

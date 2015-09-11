@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 20150908233237) do
     t.string   "description"
     t.string   "email"
     t.string   "website"
+    t.string   "password_digest"
     t.integer  "city_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "bands", ["city_id"], name: "index_bands_on_city_id", using: :btree
@@ -49,8 +50,8 @@ ActiveRecord::Schema.define(version: 20150908233237) do
     t.string   "address"
     t.string   "email"
     t.string   "website"
-    t.float    "lat"
-    t.float    "lng"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

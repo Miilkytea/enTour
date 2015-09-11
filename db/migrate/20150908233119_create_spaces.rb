@@ -5,8 +5,8 @@ class CreateSpaces < ActiveRecord::Migration
       t.string   :address
       t.string   :email
       t.string   :website
-      t.float    :lat
-      t.float    :lng
+      t.float    :latitude
+      t.float    :longitude
 
       t.references :city, index: true, foreign_key: true
 

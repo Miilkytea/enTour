@@ -23,8 +23,8 @@ Space.create(
     email: "",
   website: "",
   city_id: 1,
-      lat: 34.050160, 
-      lng: -118.245335
+ latitude: 34.050160, 
+longitude: -118.245335
 )
 
 Space.create(
@@ -33,8 +33,8 @@ Space.create(
     email: "",
   website: "",
   city_id: 1,
-      lat: 34.066450, 
-      lng: -118.260472
+ latitude: 34.066450, 
+longitude: -118.260472
 )
 
 Band.create(
