@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150908233237) do
   create_table "cities", force: :cascade do |t|
     t.string   "name"
     t.string   "state"
+    t.integer  "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

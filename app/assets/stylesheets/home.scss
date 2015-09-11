@@ -30,6 +30,20 @@ h2 {
   border-radius: 4px;
 }
 
+.btn-danger:hover
+{
+  background-color: #13FF00;
+  border-color: #000000;
+}
 
+.btn.welcome {
+  margin: 0 auto;
+}
 
+#welcome {
+  p {
+    text-align: justify;
+  }
+  
+}
 
