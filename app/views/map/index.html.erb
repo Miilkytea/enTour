@@ -21,8 +21,8 @@ function mark() {
 </script>
 
 
-<div ng-controller="MapController as vm"> 
-  
+<div ng-controller="SpacesController as vm"> 
+
   <!-- svg map view -->
   <div id="vmap" style="width: 1000px; height: 667px;"></div>
 
@@ -32,12 +32,18 @@ function mark() {
   </div>
 </div>  
 
+
+
+
 <!-- fuzzy show spaces search -->
-<div class="container">
+<div class="container spaces-container" ng-controller="SpacesController as vm">
   <div class="row">
       <div class="col-xs-6">
         <label>City</label>
-        <select class="form-control" ng-model="vm.selectedCity" ng-options="name for name in vm.name"></select>
+        <select class="form-control" ng-model="vm.selCity">  
+          <option value="Los Angeles">Los Angeles</option>
+
+        </select>
       </div>
       <div class="col-xs-6">
         <label>Search</label>
@@ -49,24 +55,25 @@ function mark() {
         <tr>
           <th ng-click="vm.sortBy = 'name'; vm.descending = !vm.descending">Name</th>
           <th ng-click="vm.sortBy = 'address'; vm.descending = !vm.descending">Address</th>
+          <th ng-click="vm.sortBy = 'city'; vm.descending = !vm.descending">City</th>
+          <th ng-click="vm.sortBy = 'state'; vm.descending = !vm.descending">State</th>
+          <th ng-click="vm.sortBy = 'zipcode'; vm.descending = !vm.descending">Zipcode</th>
           <th ng-click="vm.sortBy = 'website'; vm.descending = !vm.descending">Website</th>
           <th ng-click="vm.sortBy = 'email'; vm.descending = !vm.descending">Email</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="name in vm.name | filter:{address: vm.address} | filter:vm.search | orderBy:vm.sortBy:vm.descending">
-          <td>{{client.name}}</td>
-          <td>{{client.address}}</td>
-          <td>{{client.website}}</td>
-          <td>{{client.email}}</td>
+        <tr ng-repeat="space in vm.spaces | filter:{city: vm.selectedCity} | filter:vm.search | orderBy:vm.sortBy:vm.descending">
+          <td>{{ space.name }}</td>
+          <td>{{ space.address }}</td>
+          <td>{{ space.city }}</td>
+          <td>{{ space.state }}</td>
+          <td>{{ space.zipcode }}</td>
+          <td>{{ space.website }}</td>
+          <td>{{ space.email }}</td>
         </tr>
       </tbody>
     </table>
-<!--   <div class="input-group search-bar">
-  <input type="text" 
-         ng-model="search" 
-         ng-change="change()"
-         placeholder="Search for show spaces" </input> -->
 </div>
 
 

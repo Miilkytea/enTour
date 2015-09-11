@@ -19,7 +19,9 @@ City.create(
 
 Space.create(
      name: "The Smell",
-  address: "247 S Main St, Los Angeles, CA 90013",
+  address: "247 S Main St",
+    state: "CA",
+  zipcode: 90013,
     email: "",
   website: "",
   city_id: 1,
@@ -27,9 +29,12 @@ Space.create(
 longitude: -118.245335
 )
 
+
 Space.create(
      name: "Pehrspace",
-  address: "325 Glendale Blvd, Los Angeles, CA 90026",
+  address: "325 Glendale Blvd",
+    state: "CA",
+  zipcode: 90026,
     email: "",
   website: "",
   city_id: 1,

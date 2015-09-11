@@ -1,22 +1,27 @@
 class Api::SpacesController < ApplicationController
 
-  # GET /spaces
+
   # GET /spaces.json
   def index
     @spaces = Space.all
-    render json: @spaces , root: false
+    @spaces_data = []
+    @spaces.each do |space|
+      new_field = {"city" => City.find(space.city_id).name}
+      space = JSON::parse(space.to_json).merge(new_field)
+      @spaces_data << space
+    end
+    render json: @spaces_data , root: false
   end
 
-  # GET /spaces/1
   # GET /spaces/1.json
   def show
     render json: @space
   end
 
-  # POST /spaces
+ 
   # POST /spaces.json
   def create
-    @space = Space.find(params[:trend_id])
+    @space = Space.create(params[space_params])
     if @space.save(space_params)
       render json: @space, status: :created, location: @space
     else
@@ -24,7 +29,7 @@ class Api::SpacesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /spaces/1
+
   # PATCH/PUT /spaces/1.json
   def update
     @space = space.find(params[:id])
@@ -35,10 +40,10 @@ class Api::SpacesController < ApplicationController
     end
   end
 
-  # DELETE /spaces/1
+
   # DELETE /spaces/1.json
   def destroy
-    @space.destroy
+    @space= space.destroy
     head :no_content
   end
 
